@@ -1,0 +1,7 @@
+delete from employee
+where id not in ( select MIN(id)
+                  from employee
+                  group by name,salary,age 
+                );
+
+-- here having id a unique column would do the easy work
